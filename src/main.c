@@ -86,8 +86,7 @@ int main(int argc, char **argv) {
     }
   }
 
-  MPI_Gatherv(local, local_rows * max_column, MPI_CHAR, global, recvcounts,
-              displs, MPI_CHAR, 0, MPI_COMM_WORLD);
+  MPI_Gatherv(local, local_rows * max_column, MPI_CHAR, global, recvcounts,displs, MPI_CHAR, 0, MPI_COMM_WORLD);
 
   if (rank == 0) {
     for (int r = 0; r < max_row; r++) {
